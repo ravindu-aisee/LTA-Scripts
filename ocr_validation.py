@@ -20,16 +20,13 @@ Configuration is controlled by:
 
 * ``REFERENCE_LIST`` – list of valid bus service codes to match against.
 * ``SIMILARITY_THRESHOLD`` – minimum similarity (in %) to treat a
-    service as a positive match.
-* ``LOWER_THRESHOLD`` / ``UPPER_THRESHOLD`` – band where results are
-    considered weak but possibly meaningful, triggering the
-    "a bus is coming" message.
+    service as a positive match. otherwise trigger as bus is coming.
 """
 
 REFERENCE_LIST = ["65M", "123", "45T", "45C", "13", "122", "7", "77", "77M"]
 SIMILARITY_THRESHOLD = 55.0
-LOWER_THRESHOLD = 10.0
-UPPER_THRESHOLD = 55.0
+# LOWER_THRESHOLD = 10.0
+# UPPER_THRESHOLD = 55.0
 
 
 class StringMatcher:
