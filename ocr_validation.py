@@ -262,16 +262,17 @@ def main():
                 for m in best_matches:
                     print(f"  - {m['match']} (Index: {m['index']})")
         else:
-            # Check if any score is between LOWER_THRESHOLD and UPPER_THRESHOLD
-            found_mid_score = False
-            for item in all_scores:
-                if LOWER_THRESHOLD <= item["score"] < UPPER_THRESHOLD:
-                    found_mid_score = True
-                    break
-            if found_mid_score:
-                print(" A Bus is coming")
-            else:
-                print("No Match Found (all scores below threshold)")
+            print(" A Bus is coming")
+            # # Check if any score is between LOWER_THRESHOLD and UPPER_THRESHOLD
+            # found_mid_score = False
+            # for item in all_scores:
+            #     if LOWER_THRESHOLD <= item["score"] < UPPER_THRESHOLD:
+            #         found_mid_score = True
+            #         break
+            # if found_mid_score:
+            #     print(" A Bus is coming")
+            # else:
+            #     print("No Match Found (all scores below threshold)")
 
         # Get all matches above threshold
         all_matches = matcher.find_all_matches(ocr_input)
