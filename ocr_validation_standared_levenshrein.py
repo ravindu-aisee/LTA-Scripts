@@ -23,8 +23,27 @@ Configuration is controlled by:
     service as a positive match. otherwise trigger as bus is coming.
 """
 
-REFERENCE_LIST = ["65M", "123", "45T", "45C", "13", "122", "7", "77", "77M"]
-SIMILARITY_THRESHOLD = 55.0
+REFERENCE_LIST = [
+    "100",
+    "11",
+    "12",
+    "13",
+    "197",
+    "2",
+    "21",
+    "26",
+    "31",
+    "32",
+    "33",
+    "51",
+    "62",
+    "63",
+    "67",
+    "7",
+    "80",
+    "853M",
+]
+SIMILARITY_THRESHOLD = 50.0
 # LOWER_THRESHOLD = 10.0
 # UPPER_THRESHOLD = 55.0
 
@@ -260,18 +279,7 @@ def main():
                     print(f"  - {m['match']} (Index: {m['index']})")
         else:
             print(" A Bus is coming")
-            # # Check if any score is between LOWER_THRESHOLD and UPPER_THRESHOLD
-            # found_mid_score = False
-            # for item in all_scores:
-            #     if LOWER_THRESHOLD <= item["score"] < UPPER_THRESHOLD:
-            #         found_mid_score = True
-            #         break
-            # if found_mid_score:
-            #     print(" A Bus is coming")
-            # else:
-            #     print("No Match Found (all scores below threshold)")
 
-        # Get all matches above threshold
         all_matches = matcher.find_all_matches(ocr_input)
 
         if len(all_matches) > len(best_matches):
